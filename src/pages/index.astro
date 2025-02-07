@@ -1,10 +1,68 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import BriefcaseIcon from "../components/icons/Briefcase.astro";
+import Social from "../components/Social.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 ---
 
-<Layout title="Astro Basics">
+<Layout title="Potafolio de Alexander Caballero - Ingeniero de Software">
 	<main>
+		<SectionContainer id="top" class="py-44 pb-24">
+			<img
+				class="rounded-full size-16 mb-4"
+				src="https://pbs.twimg.com/profile_images/1073108634194841602/7AgJtFgB_400x400.jpg"
+				alt="Alexander photo"
+			/>
 
+			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
+				Hola, soy Alexander
+				<a
+					href="https://www.linkedin.com/in/alexander-caballero-leon-420026215/"
+					target="_blank"
+					rel="noreferrer"
+					class="flex justify-center items-center"
+				>
+					<Badge>Buscando Trabajo</Badge>
+				</a>
+			</h1>
+
+			<h2 class="text-2xl opacity-80 text-wrap">
+				Ingeniero de Software recién egresado, con habilidades mixtas de
+				<span class="text-orange-400"
+					>Data Science, Desarrollo WEB y Mobile
+				</span>
+				. De Lima, Perú.
+			</h2>
+
+			<nav class="flex gap-x-4 mt-8">
+				<Social href="https://www.linkedin.com/in/alexander-caballero-leon-420026215/">
+					<LinkedInIcon class="size-6" />
+					LinkedIn
+				</Social>
+
+				<Social href="https://github.com/FrediCaballero">
+					<GithubIcon class="size-6" />
+					Github
+				</Social>
+
+				<Social href="mailto:frealcale@gmail.com">
+					<MailIcon class="size-6" />
+					frealcale@gmail.com
+				</Social>				
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="experience">
+			<h2 class="text-3xl font-semibold text-orange-400/90 mb-6 flex gap-x-3 tems-center">
+				<BriefcaseIcon class="size-8"/>
+				Experiencia Laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
 	</main>
 </Layout>
