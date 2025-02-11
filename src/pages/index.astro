@@ -5,21 +5,23 @@ import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import GithubIcon from "../components/icons/Github.astro";
 import MailIcon from "../components/icons/Mail.astro";
 import BriefcaseIcon from "../components/icons/Briefcase.astro";
+import CodeCircleIcon from "../components/icons/CodeCircle.astro";
 import Social from "../components/Social.astro";
 import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro"
 import SectionContainer from "../components/SectionContainer.astro";
 ---
 
 <Layout title="Potafolio de Alexander Caballero - Ingeniero de Software">
-	<main>
-		<SectionContainer id="top" class="py-44 pb-24">
+	<main class="px-4">
+		<SectionContainer id="top" class="py-44 pb-32">
 			<img
 				class="rounded-full size-16 mb-4"
 				src="https://pbs.twimg.com/profile_images/1073108634194841602/7AgJtFgB_400x400.jpg"
 				alt="Alexander photo"
 			/>
 
-			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
+			<h1 class="text-white text-2xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
 				Hola, soy Alexander
 				<a
 					href="https://www.linkedin.com/in/alexander-caballero-leon-420026215/"
@@ -31,7 +33,7 @@ import SectionContainer from "../components/SectionContainer.astro";
 				</a>
 			</h1>
 
-			<h2 class="text-2xl opacity-80 text-pretty">
+			<h2 class=" text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
 				Ingeniero de Software recién egresado, con habilidades mixtas de
 				<span class="text-orange-400"
 					>Data Science, Desarrollo WEB y Mobile.
@@ -39,19 +41,19 @@ import SectionContainer from "../components/SectionContainer.astro";
 				De Lima, Perú.
 			</h2>
 
-			<nav class="flex gap-x-4 mt-8">
+			<nav class="flex gap-4 mt-8 flex-wrap">
 				<Social href="https://www.linkedin.com/in/alexander-caballero-leon-420026215/">
-					<LinkedInIcon class="size-6" />
+					<LinkedInIcon class=" size-4 md:size-6" />
 					LinkedIn
 				</Social>
 
 				<Social href="https://github.com/FrediCaballero">
-					<GithubIcon class="size-6" />
+					<GithubIcon class=" size-4 md:size-6" />
 					Github
 				</Social>
 
 				<Social href="mailto:frealcale@gmail.com">
-					<MailIcon class="size-6" />
+					<MailIcon class=" size-4 md:size-6" />
 					frealcale@gmail.com
 				</Social>				
 			</nav>
@@ -64,5 +66,14 @@ import SectionContainer from "../components/SectionContainer.astro";
 			</h2>
 			<Experience />
 		</SectionContainer>
+
+		<SectionContainer id="projects">
+			<h2 class="text-3xl font-semibold text-white/90 mb-6 flex gap-x-3 tems-center">
+				<CodeCircleIcon class="size-8"/>
+				Proyectos Personales
+			</h2>
+			<Projects />
+		</SectionContainer>
+
 	</main>
 </Layout>

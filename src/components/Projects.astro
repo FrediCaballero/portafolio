@@ -1,0 +1,79 @@
+---
+import NextJSIcon from "../components/icons/NextJS.astro";
+import TailwindIcon from "../components/icons/Tailwind.astro";
+import TypeScriptIcon from "../components/icons/TypeScript.astro";
+import JavaIcon from "../components/icons/Java.astro";
+import RubyIcon from "../components/icons/Ruby.astro";
+
+const TAGS = {
+    NEXT: {
+        name: "Next.js",
+        color: "bg-black text-white/90",
+        icon: NextJSIcon
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        color: "bg-sky-800 text-white",
+        icon: TailwindIcon
+    },
+    TYPESCRIPT: {
+        name: "TypeScript",
+        color: "bg-blue-500/60 text-white",
+        icon: TypeScriptIcon
+    },
+    JAVA: {
+        name: "Java",
+        color: "bg-sky-800/80 text-orange-500/90",
+        icon: JavaIcon
+    },
+    RUBY: {
+        name: "Ruby",
+        color: "bg-gray-200 text-red-600",
+        icon: RubyIcon
+    }
+}
+
+const PROJECTS = [
+    {
+        title: "Centro de Idiomas UNMSM",
+        description:
+            "El Centro de Idiomas de la Universidad Nacional Mayor de San Marcos que tiene 32 años de experiencia dedicada a la enseñanza de idiomas extranjeros, lenguas originarias como el Quechua y Aimara. Con el respaldo académico de la Escuela Profesional de Lingüística de la UNMSM y la Cátedra de quechua.",
+        link: "https://ceidletras.unmsm.edu.pe/",
+        github: "https://github.com/dictionaria/iquito",
+        image: "/projects/idiomas.webp",
+        tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.TYPESCRIPT],
+    },
+    {
+        title: "Sonar Cloud",
+        description: "SaaS solution for Clean Code. Simple, Scalable, Fast",
+        link: "https://www.sonarsource.com/products/sonarcloud/",
+        github: "https://github.com/SonarSource/sonarcloud-github-action",
+        image: "/projects/sonarCloud.webp",
+        tags: [TAGS.JAVA, TAGS.RUBY],
+    },
+];
+
+---
+
+{
+    PROJECTS.map(({ title, description, link, github, image, tags }) => (
+        <article>
+            <h3 class="text-2xl font-semibold mb-2 text-orange-400/90">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-2">
+                {tags.map((tag) => (
+                    <li>
+                        <span class= {`flex gap-x-2 rounded-full text-xs ${tag.color} py-1 px-2`} >
+                            <tag.icon class="size-4"/> {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img
+                class="rounded shadow-2xl shadow-white/20"
+                src={image}
+                alt={`Captura de Pantalla - Proyecto ${title}`}
+            />
+        </article>
+    ))
+}
